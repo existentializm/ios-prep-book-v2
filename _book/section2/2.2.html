@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Interacting with users | Lighthouse Logo</title>
+        <title>Foundation | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,8 @@
         
     
     
-    <link rel="next" href="../section1/1.9.html" />
     
-    
-    <link rel="prev" href="../section1/1.7.html" />
+    <link rel="prev" href="../section2/2.1.html" />
     
 
         
@@ -49,9 +47,9 @@
         
         
     <div class="book"
-        data-level="2.8"
-        data-chapter-title="Interacting with users"
-        data-filepath="section1/1.8.md"
+        data-level="3.2"
+        data-chapter-title="Foundation"
+        data-filepath="section2/2.2.md"
         data-basepath=".."
         data-revision="Wed Aug 10 2016 00:20:57 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -269,7 +267,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.8" data-path="section1/1.8.html">
+        <li class="chapter " data-level="2.8" data-path="section1/1.8.html">
             
                 
                     <a href="../section1/1.8.html">
@@ -350,7 +348,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="section2/2.2.html">
+        <li class="chapter active" data-level="3.2" data-path="section2/2.2.html">
             
                 
                     <a href="../section2/2.2.html">
@@ -540,43 +538,17 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="interacting-with-users">Interacting with Users</h1>
-<p>We know <strong>printf()</strong> sends data to the screen. The <strong>scanf()</strong> function gets data from the keyboard. You must have a way to get data from your user. You can&apos;t always assign data values using assignment statements. For example, if you were writing a movie theatre program to for use throughout the country, you couldn&apos;t assign the cost of a ticket to a variable using the equals sign in your program because every theatre&#x2019;s ticket price could differ. Instead, you would have to ask the user of the program in each theatre location how much a ticket costs before computing a charge.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/898jx2GHZHo" frameborder="0" allowfullscreen></iframe>
-
-<h5 id="switch-case">Switch case</h5>
-<ol>
-<li>Copy this code into a new project and test it out.</li>
-</ol>
-<pre><code class="lang-c"><span class="hljs-keyword">int</span> mystery_number = <span class="hljs-number">7</span>;
-<span class="hljs-keyword">int</span> number_chosen;
-
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Win a prize everytime!\n&quot;</span>);
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>;
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Pick a number between: 1 - 5\n&quot;</span>);
-<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, &amp;number_chosen); <span class="hljs-comment">// 5</span>
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Congratulations! You won a...\n&quot;</span>);
-
-<span class="hljs-keyword">switch</span>(number_chosen)
-{
-  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Trip to Barbados!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;A bicycle!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;A meal at Timmies!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Season pass to Wonderland!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Five nights at DisneyLand!&quot;</span>); <span class="hljs-keyword">break</span>;
-}
-</code></pre>
+                        <h3 id="foundation">Foundation</h3>
+<p>Building apps for iOS is different than making programs in C. The bulk of the work is actually not done by us. It&apos;s done by engineers at Apple and other companies alike. They develop the <a href="https://en.wikipedia.org/wiki/Software_framework" target="_blank">frameworks</a> that we use in order to build apps for the iOS platform.</p>
 <blockquote>
-<p>Five nights at DisneyLand!</p>
+<p><em>&quot;The Foundation framework defines a base layer of Objective-C classes. In addition to providing a set of useful &gt;primitive object classes, it introduces several paradigms that define functionality not covered by the Objective-C language.&quot;</em></p>
+<ul>
+<li><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/ObjC_classic/" target="_blank">The Foundation Framework</a>.</li>
+</ul>
 </blockquote>
-<p>In this example we use <strong>scanf</strong> to read input from the user to see what number they chose to collect their prize!</p>
-<p>Can you see now how useful reading in user input from the keyboard can be?</p>
-<hr>
-<h3 id="challenge">Challenge</h3>
-<ol>
-<li>Write C program to accept a string from users and print it.</li>
-<li>C program to accept a string and print out total numbers of characters.</li>
-</ol>
+<p>The Foundation framework includes all the basic objects we need to accomplish our tasks. Some classes represent basic data types like strings and arrays while others represent information like dates. It even gets as sophisticated as objects that allow us to communicate over a network (the internet).</p>
+<p>The most important class in Foundation is called <code>NSObject</code> and it&apos;s where all the other classes come from. Think <code>NSObject</code> like the root of your Family Tree. It&apos;s where everything started.</p>
+<p>Let&apos;s take a detour and go over this reading about <a href="http://rypress.com/tutorials/objective-c/classes" target="_blank">Classes</a>!</p>
 
                     
                     </section>
@@ -587,10 +559,8 @@
         </div>
 
         
-        <a href="../section1/1.7.html" class="navigation navigation-prev " aria-label="Previous page: Assignment #1"><i class="fa fa-angle-left"></i></a>
+        <a href="../section2/2.1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Objective-C Primer"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../section1/1.9.html" class="navigation navigation-next " aria-label="Next page: Assignment #2"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Interacting with users | Lighthouse Logo</title>
+        <title>Objective-C Primer | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section1/1.9.html" />
+    <link rel="next" href="../section2/2.2.html" />
     
     
-    <link rel="prev" href="../section1/1.7.html" />
+    <link rel="prev" href="../section2/index.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="2.8"
-        data-chapter-title="Interacting with users"
-        data-filepath="section1/1.8.md"
+        data-level="3.1"
+        data-chapter-title="Objective-C Primer"
+        data-filepath="section2/2.1.md"
         data-basepath=".."
         data-revision="Wed Aug 10 2016 00:20:57 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -269,7 +269,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.8" data-path="section1/1.8.html">
+        <li class="chapter " data-level="2.8" data-path="section1/1.8.html">
             
                 
                     <a href="../section1/1.8.html">
@@ -335,7 +335,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1" data-path="section2/2.1.html">
+        <li class="chapter active" data-level="3.1" data-path="section2/2.1.html">
             
                 
                     <a href="../section2/2.1.html">
@@ -540,43 +540,29 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="interacting-with-users">Interacting with Users</h1>
-<p>We know <strong>printf()</strong> sends data to the screen. The <strong>scanf()</strong> function gets data from the keyboard. You must have a way to get data from your user. You can&apos;t always assign data values using assignment statements. For example, if you were writing a movie theatre program to for use throughout the country, you couldn&apos;t assign the cost of a ticket to a variable using the equals sign in your program because every theatre&#x2019;s ticket price could differ. Instead, you would have to ask the user of the program in each theatre location how much a ticket costs before computing a charge.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/898jx2GHZHo" frameborder="0" allowfullscreen></iframe>
+                        <h3 id="objectivec-primer">Objective-C Primer</h3>
+<p>Objective-C is the language you will use to create iOS apps. The language has a really interesting history you can read more about it <a href="https://en.wikipedia.org/wiki/Objective-C" target="_blank">here</a>.</p>
+<p>Writing an Objective-C program is very similar to a C program. Take this Hello World program as an example:  </p>
+<p><img src="../images/objc-helloworld.png" alt="Hello World"></p>
+<h3 id="the-breakdown">The breakdown</h3>
+<p>Similar to our first C program an Objective-C program starts by importing a library in order for us to access things like <code>NSLog</code>. In our C program we used <code>printf</code> but we did not write the code that makes <code>printf</code> output what we want to the console. The standard C library <code>stdio</code> allows us to do that. Same goes for Objective-C except <strong>Foundation</strong> (one of Apple&apos;s frameworks) does most of the heavy lifting for us.</p>
+<p><code>#import &lt;Foundation/Foundation.h&gt;</code></p>
+<p>The main function is the exact same in Objective-C. The only difference is the use of something called an @autoreleasepool. Don&apos;t worry to much about that for now, it has to do with managing memory and you will learn all about it in class. Stay with me...</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+  @autoreleasepool {
 
-<h5 id="switch-case">Switch case</h5>
-<ol>
-<li>Copy this code into a new project and test it out.</li>
-</ol>
-<pre><code class="lang-c"><span class="hljs-keyword">int</span> mystery_number = <span class="hljs-number">7</span>;
-<span class="hljs-keyword">int</span> number_chosen;
-
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Win a prize everytime!\n&quot;</span>);
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>;
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Pick a number between: 1 - 5\n&quot;</span>);
-<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, &amp;number_chosen); <span class="hljs-comment">// 5</span>
-<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Congratulations! You won a...\n&quot;</span>);
-
-<span class="hljs-keyword">switch</span>(number_chosen)
-{
-  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Trip to Barbados!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;A bicycle!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;A meal at Timmies!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Season pass to Wonderland!&quot;</span>); <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Five nights at DisneyLand!&quot;</span>); <span class="hljs-keyword">break</span>;
+  }
 }
 </code></pre>
-<blockquote>
-<p>Five nights at DisneyLand!</p>
-</blockquote>
-<p>In this example we use <strong>scanf</strong> to read input from the user to see what number they chose to collect their prize!</p>
-<p>Can you see now how useful reading in user input from the keyboard can be?</p>
-<hr>
-<h3 id="challenge">Challenge</h3>
-<ol>
-<li>Write C program to accept a string from users and print it.</li>
-<li>C program to accept a string and print out total numbers of characters.</li>
-</ol>
+<p>Right inside our <code>@autoreleasepool</code> we use something called <code>NSLog</code> which is the <strong>Foundation</strong> equivalent for C&apos;s <strong>stdio</strong> <code>printf</code>. It does everything <code>printf</code> does and more:</p>
+<ul>
+<li><code>NSLog</code> adds a timestamp and identifier to the output, whereas printf will not;</li>
+<li>When performed on physical device, NSLog statements appear in the device&apos;s console whereas <code>printf</code> only appears in the debugger console. (More about this in class.)</li>
+</ul>
+<pre><code class="lang-c">NSLog(@<span class="hljs-string">&quot;Hello, World!\n&quot;</span>);
+</code></pre>
+<p>One of of the first things I asked myself when I encountered <code>NSLog</code> was the use of the @ sign. Why? It&apos;s how Objective-C strings are differentiated from C Strings. Let&apos;s keep it at that.</p>
+<p>Notice the similarities? </p>
 
                     
                     </section>
@@ -587,10 +573,10 @@
         </div>
 
         
-        <a href="../section1/1.7.html" class="navigation navigation-prev " aria-label="Previous page: Assignment #1"><i class="fa fa-angle-left"></i></a>
+        <a href="../section2/index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to Objective-C"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section1/1.9.html" class="navigation navigation-next " aria-label="Next page: Assignment #2"><i class="fa fa-angle-right"></i></a>
+        <a href="../section2/2.2.html" class="navigation navigation-next " aria-label="Next page: Foundation"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -16,7 +16,7 @@
     * [Assignment #2](section1/1.9.md)
     * [Structs](section1/1.10.md)
 * [Introduction to Objective-C](section2/README.md)
-    * [Writing your first Objective-C program](section2/2.1.md)
+    * [Objective-C Primer](section2/2.1.md)
     * [Foundation](section2/2.2.md)
     * [Loops](section2/2.3.md)
     * [Objects](section2/2.4.md)
