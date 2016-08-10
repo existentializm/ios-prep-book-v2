@@ -5,7 +5,7 @@
 Welcome to Lighthouse Labs. You are here to get prepared for your immersive iOS bootcamp. We are super excited to have you.
 
 #### Objectives
-This prep course is designed to get you prepared for class. It will teach you the fundamentals of programming an iOS application so that you can hit the ground running when you get here.
+This prep course is designed to get you prepared for class. It will teach you the fundamentals of an iOS application so that you can hit the ground running when you get here.
 
 By the end of this prep course, you will:
 
@@ -87,7 +87,8 @@ This material is broken out into 6 sections which introduce you their respective
   1. Getting setup
   2. Introduction to Programming with C
   3. Introduction to Programming with Objective C
-  5. Understanding Github
+  4. Introduction to iOS
+  5. Using Github
   6. Extra resources
 
 

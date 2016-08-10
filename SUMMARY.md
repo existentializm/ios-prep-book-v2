@@ -22,7 +22,7 @@
     * [Objects](section2/2.4.md)
     * [Assignment #1](section2/2.6.md)
     * [Assignment #2](section2/2.7.md)
-* [Introduction to iPhone programming](section3/README.md)
+* [Introduction to iOS](section3/README.md)
     * [Your first app](section3/3.1.md)
     * [Todo list (Part 1)](section3/3.2.md)
     * [Todo list (Part 2)](section3/3.3.md)
