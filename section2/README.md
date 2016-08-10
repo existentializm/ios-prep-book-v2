@@ -2,7 +2,7 @@
 
 <iframe width="700" height="394" src="https://www.youtube.com/embed/8rwsuXHA7RA" frameborder="0" allowfullscreen></iframe>
 
-Just a little inspiration ;) 
+Just a little inspiration ;)
 
 ### Introduction
 So, now that we learned some programming, it would be good to know what exactly is object-oriented programming? In a 1994 interview with the Rolling Stone magazine, Steve Jobs described it in the following way:
