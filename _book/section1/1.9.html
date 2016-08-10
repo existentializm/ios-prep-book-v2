@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Setting up your mac | Lighthouse Logo</title>
+        <title>Assignment #2 | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section0/0.2.html" />
+    <link rel="next" href="../section1/1.10.html" />
     
     
-    <link rel="prev" href="../section0/index.html" />
+    <link rel="prev" href="../section1/1.8.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1.1"
-        data-chapter-title="Setting up your mac"
-        data-filepath="section0/0.1.md"
+        data-level="2.9"
+        data-chapter-title="Assignment #2"
+        data-filepath="section1/1.9.md"
         data-basepath=".."
         data-revision="Tue Aug 09 2016 21:55:11 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -98,7 +98,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="section0/0.1.html">
+        <li class="chapter " data-level="1.1" data-path="section0/0.1.html">
             
                 
                     <a href="../section0/0.1.html">
@@ -284,7 +284,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.9" data-path="section1/1.9.html">
+        <li class="chapter active" data-level="2.9" data-path="section1/1.9.html">
             
                 
                     <a href="../section1/1.9.html">
@@ -524,12 +524,54 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-your-mac"><img src="../images/mac-big.png" alt="Mac"> Setting up your mac</h1>
-<p>Watch the video below and follow along to set up your Mac for success.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/OQYR-Wz3BKU?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <h1 id="assignment-2-two-doors">Assignment 2: Two doors</h1>
+<p>Read the code and find the bugs</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 
-<p>After watching this video you will have a directory structure that will allow you to house all the C files we will create in the next section of the prep course. We will grow this directory later on in the prep.</p>
-<p><strong>One section at a time young padawan!</strong></p>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+
+    <span class="hljs-keyword">char</span> play;
+    <span class="hljs-keyword">char</span> choice;
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Welcome to Two doors.\n&quot;</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Would you like to play? (y/n): &quot;</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;play);
+
+    <span class="hljs-keyword">if</span> (play = <span class="hljs-string">&apos;y&apos;</span>) {
+
+        print(<span class="hljs-string">&quot;\nYou are a prisoner in a room with 2 doors and 2 guards.\n&quot;</span>);
+        print(<span class="hljs-string">&quot;One of the doors will guide you to freedom and behind the other is a hangman --you don&apos;t know which is which.\n&quot;</span>);
+        print(<span class="hljs-string">&quot;One of the guards always tells the truth and the other always lies. You don&apos;t know which one is the truth-teller or the liar either.\n&quot;</span>);
+        print(<span class="hljs-string">&quot;You have to choose and open one of these doors, but you can only ask a single question to one of the guards.\n&quot;</span>);
+        print(<span class="hljs-string">&quot;What do you ask so you can pick the door to freedom?\n\n&quot;</span>);
+        print(<span class="hljs-string">&quot;\t1.Ask the truth-guard to point to the door of doom.\n&quot;</span>);
+        print(<span class="hljs-string">&quot;\t2.Ask the liar-guard to point to the door of doom.\n&quot;</span>);
+        print(<span class="hljs-string">&quot;\t3.Doesn&apos;t matter which one you pick.\n&quot;</span>);
+        scan(<span class="hljs-string">&quot;%f&quot;</span>, choice);
+
+        <span class="hljs-keyword">char</span> answer = <span class="hljs-string">&quot;No matter which one you choose the guards both tell you which door leads to death, and therefore you can pick the other door.\n&quot;</span>;
+        <span class="hljs-keyword">switch</span> (choice) {
+            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+                print(<span class="hljs-string">&quot;c&quot;</span>, answer);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+                print(<span class="hljs-string">&quot;c&quot;</span>, answer);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+                print(<span class="hljs-string">&quot;c&quot;</span>, answer);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">break</span>;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p><strong>Goal</strong></p>
+<p>Make the program compile</p>
+<p><strong>Stretch goals</strong></p>
+<p>Make it so the user is asked to play the game over again. If the user presses y start the game from the beginning. If they press n stop the program.</p>
 
                     
                     </section>
@@ -540,10 +582,10 @@
         </div>
 
         
-        <a href="../section0/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Setup"><i class="fa fa-angle-left"></i></a>
+        <a href="../section1/1.8.html" class="navigation navigation-prev " aria-label="Previous page: Interacting with users"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section0/0.2.html" class="navigation navigation-next " aria-label="Next page: Xcode"><i class="fa fa-angle-right"></i></a>
+        <a href="../section1/1.10.html" class="navigation navigation-next " aria-label="Next page: Structs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

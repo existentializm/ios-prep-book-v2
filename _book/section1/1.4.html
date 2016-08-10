@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Setting up your mac | Lighthouse Logo</title>
+        <title>Lists of Characters | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section0/0.2.html" />
+    <link rel="next" href="../section1/1.5.html" />
     
     
-    <link rel="prev" href="../section0/index.html" />
+    <link rel="prev" href="../section1/1.3.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1.1"
-        data-chapter-title="Setting up your mac"
-        data-filepath="section0/0.1.md"
+        data-level="2.4"
+        data-chapter-title="Lists of Characters"
+        data-filepath="section1/1.4.md"
         data-basepath=".."
         data-revision="Tue Aug 09 2016 21:55:11 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -98,7 +98,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="section0/0.1.html">
+        <li class="chapter " data-level="1.1" data-path="section0/0.1.html">
             
                 
                     <a href="../section0/0.1.html">
@@ -209,7 +209,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="section1/1.4.html">
+        <li class="chapter active" data-level="2.4" data-path="section1/1.4.html">
             
                 
                     <a href="../section1/1.4.html">
@@ -524,12 +524,45 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-your-mac"><img src="../images/mac-big.png" alt="Mac"> Setting up your mac</h1>
-<p>Watch the video below and follow along to set up your Mac for success.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/OQYR-Wz3BKU?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <h1 id="character-arrays-lists-of-characters">Character Arrays: Lists of Characters</h1>
+<p>An Array is nothing more than a list of variables of the same data type.</p>
+<ol>
+<li>Command-Line tool called Array</li>
+<li>Copy the code into your editor</li>
+</ol>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 
-<p>After watching this video you will have a directory structure that will allow you to house all the C files we will create in the next section of the prep course. We will grow this directory later on in the prep.</p>
-<p><strong>One section at a time young padawan!</strong></p>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span> </span>{
+
+   <span class="hljs-keyword">int</span> n[ <span class="hljs-number">10</span> ]; <span class="hljs-comment">/* n is an array of 10 integers */</span>
+   <span class="hljs-keyword">int</span> i,j;
+
+   <span class="hljs-comment">/* initialize elements of array n to 0 */</span>         
+   <span class="hljs-keyword">for</span> ( i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++ ) {
+      n[ i ] = i + <span class="hljs-number">100</span>; <span class="hljs-comment">/* set element at location i to i + 100 */</span>
+   }
+
+   <span class="hljs-comment">/* output each array element&apos;s value */</span>
+   <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">10</span>; j++ ) {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Element[%d] = %d\n&quot;</span>, j, n[j] );
+   }
+
+   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h5 id="lets-walk-through-the-code-together-">Let&apos;s walk through the code together :)</h5>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/FGQkRbEHxAc" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="note">Note</h3>
+<p>As you can see we are getting the value at an elements location by adding brackets to <code>n</code> like this <code>n[]</code> with a number inside it <code>n[1]</code> outputs 101.</p>
+<h3 id="research">Research</h3>
+<ul>
+<li>Ask Google why array&apos;s start from the position 0.</li>
+<li>Create a variable that can hold a list of characters like <code>char *street = &quot;123 Fake Street.&quot;</code> and print the value of <code>street[6]</code>;</li>
+</ul>
+<hr>
+<h3 id="challenge">Challenge</h3>
+<p>Write a program that outputs the 4th character of the month September.</p>
 
                     
                     </section>
@@ -540,10 +573,10 @@
         </div>
 
         
-        <a href="../section0/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Setup"><i class="fa fa-angle-left"></i></a>
+        <a href="../section1/1.3.html" class="navigation navigation-prev " aria-label="Previous page: Variables"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section0/0.2.html" class="navigation navigation-next " aria-label="Next page: Xcode"><i class="fa fa-angle-right"></i></a>
+        <a href="../section1/1.5.html" class="navigation navigation-next " aria-label="Next page: Decisions, decisions..."><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

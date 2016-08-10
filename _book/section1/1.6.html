@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Setting up your mac | Lighthouse Logo</title>
+        <title>Loops | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section0/0.2.html" />
+    <link rel="next" href="../section1/1.7.html" />
     
     
-    <link rel="prev" href="../section0/index.html" />
+    <link rel="prev" href="../section1/1.5.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1.1"
-        data-chapter-title="Setting up your mac"
-        data-filepath="section0/0.1.md"
+        data-level="2.6"
+        data-chapter-title="Loops"
+        data-filepath="section1/1.6.md"
         data-basepath=".."
         data-revision="Tue Aug 09 2016 21:55:11 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -98,7 +98,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="section0/0.1.html">
+        <li class="chapter " data-level="1.1" data-path="section0/0.1.html">
             
                 
                     <a href="../section0/0.1.html">
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="section1/1.6.html">
+        <li class="chapter active" data-level="2.6" data-path="section1/1.6.html">
             
                 
                     <a href="../section1/1.6.html">
@@ -524,12 +524,77 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-your-mac"><img src="../images/mac-big.png" alt="Mac"> Setting up your mac</h1>
-<p>Watch the video below and follow along to set up your Mac for success.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/OQYR-Wz3BKU?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <h1 id="loops">Loops</h1>
+<p>You may encounter situations, when a block of code needs to be executed several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/lXF7_LxRQV0" frameborder="0" allowfullscreen></iframe>
 
-<p>After watching this video you will have a directory structure that will allow you to house all the C files we will create in the next section of the prep course. We will grow this directory later on in the prep.</p>
-<p><strong>One section at a time young padawan!</strong></p>
+<p>A loop statement allows us to execute a statement or group of statements multiple times. The C programming language provides the following types of loops</p>
+<h5 id="for">for</h5>
+<p>Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p>
+<pre><code class="lang-c"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, i);
+}
+</code></pre>
+<blockquote>
+<p>0123456789</p>
+</blockquote>
+<h5 id="while">while</h5>
+<p>Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p>
+<pre><code class="lang-c"><span class="hljs-keyword">while</span> (YES) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Help, I am stuck in an infinite loop!\n&quot;</span>);
+}
+</code></pre>
+<blockquote>
+<p>Help, I am stuck in an infinite loop!</p>
+<p>Help, I am stuck in an infinite loop!</p>
+<p>Help, I am stuck in an infinite loop!
+...</p>
+</blockquote>
+<h5 id="dowhile-loop">do...while loop</h5>
+<p>It is more like a while statement, except that it tests the condition at the end of the loop body.</p>
+<pre><code class="lang-c"> <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
+ <span class="hljs-keyword">do</span> {
+   <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;value of a: %d\n&quot;</span>, a);
+   a = a + <span class="hljs-number">1</span>;
+ } <span class="hljs-keyword">while</span>(a &lt; <span class="hljs-number">20</span>);
+</code></pre>
+<blockquote>
+<p>value of a: 10</p>
+<p>value of a: 11</p>
+<p>value of a: 12</p>
+<p>value of a: 13</p>
+<p>value of a: 14</p>
+<p>value of a: 15</p>
+<p>value of a: 16</p>
+<p>value of a: 17</p>
+<p>value of a: 18</p>
+<p>value of a: 19</p>
+</blockquote>
+<h5 id="nested-loops">nested loops</h5>
+<p>You can use one or more loops inside any other while, for, or do..while loop.</p>
+<pre><code class="lang-c"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;-%d\n&quot;</span>, i);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;--%d\n&quot;</span>, j);
+    }
+}
+</code></pre>
+<blockquote>
+<p>-0</p>
+<p>--0</p>
+<p>--1</p>
+<p>--2</p>
+<p>-1</p>
+<p>--0</p>
+<p>--1</p>
+<p>--2</p>
+<p>-2</p>
+<p>--0</p>
+<p>--1</p>
+<p>--2</p>
+</blockquote>
+<hr>
+<p><a href="http://www.tutorialspoint.com/cprogramming/c_loops.htm" target="_blank">Read more on loops here</a></p>
 
                     
                     </section>
@@ -540,10 +605,10 @@
         </div>
 
         
-        <a href="../section0/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Setup"><i class="fa fa-angle-left"></i></a>
+        <a href="../section1/1.5.html" class="navigation navigation-prev " aria-label="Previous page: Decisions, decisions..."><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section0/0.2.html" class="navigation navigation-next " aria-label="Next page: Xcode"><i class="fa fa-angle-right"></i></a>
+        <a href="../section1/1.7.html" class="navigation navigation-next " aria-label="Next page: Assignment #1"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

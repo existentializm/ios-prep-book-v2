@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Setting up your mac | Lighthouse Logo</title>
+        <title>Decisions, decisions... | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section0/0.2.html" />
+    <link rel="next" href="../section1/1.6.html" />
     
     
-    <link rel="prev" href="../section0/index.html" />
+    <link rel="prev" href="../section1/1.4.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1.1"
-        data-chapter-title="Setting up your mac"
-        data-filepath="section0/0.1.md"
+        data-level="2.5"
+        data-chapter-title="Decisions, decisions..."
+        data-filepath="section1/1.5.md"
         data-basepath=".."
         data-revision="Tue Aug 09 2016 21:55:11 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -98,7 +98,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="section0/0.1.html">
+        <li class="chapter " data-level="1.1" data-path="section0/0.1.html">
             
                 
                     <a href="../section0/0.1.html">
@@ -224,7 +224,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="section1/1.5.html">
+        <li class="chapter active" data-level="2.5" data-path="section1/1.5.html">
             
                 
                     <a href="../section1/1.5.html">
@@ -524,12 +524,81 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-your-mac"><img src="../images/mac-big.png" alt="Mac"> Setting up your mac</h1>
-<p>Watch the video below and follow along to set up your Mac for success.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/OQYR-Wz3BKU?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <h1 id="decision-making">Decision Making</h1>
+<p>In life, we all have to make decisions. In order to make a decision we weigh out our options and so do our programs.</p>
+<p>Here is the general form of the decision making structures found in C.</p>
+<p><em>Follow the links underneath the examples to learn more about each one.</em></p>
+<h5 id="if">if</h5>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> target = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (target == <span class="hljs-number">10</span>) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Target is equal to 10&quot;</span>);
+}
+</code></pre>
+<blockquote>
+<p>Target is equal to 10</p>
+</blockquote>
+<h5 id="ifelse">if...else</h5>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> target = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (target &gt; <span class="hljs-number">5</span>) {
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Target is greater than 5&quot;</span>)
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Target is less than 5&quot;</span>)
+}
+</code></pre>
+<blockquote>
+<p>Target is less than 5</p>
+</blockquote>
+<h5 id="nesting-ifelse">Nesting if...else</h5>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> peanuts_eaten = <span class="hljs-number">22</span>;
+<span class="hljs-keyword">int</span> peanuts_in_jar = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">int</span> max_peanut_limit = <span class="hljs-number">50</span>;
 
-<p>After watching this video you will have a directory structure that will allow you to house all the C files we will create in the next section of the prep course. We will grow this directory later on in the prep.</p>
-<p><strong>One section at a time young padawan!</strong></p>
+<span class="hljs-keyword">if</span> (peanuts_in_jar &gt; <span class="hljs-number">80</span>)
+{
+  <span class="hljs-keyword">if</span> (peanuts_eaten &lt; max_peanut_limit)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Take as many peanuts as you want!\n&quot;</span>, );
+  }
+}
+<span class="hljs-keyword">else</span>
+{
+  <span class="hljs-keyword">if</span> (peanuts_eaten &gt; peanuts_in_jar)
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;You can&apos;t have anymore peanuts!\n&quot;</span>, );
+  }
+  <span class="hljs-keyword">else</span>
+  {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Alright, just one more peanut.\n&quot;</span>, );
+  }
+}
+</code></pre>
+<blockquote>
+<p>Take as many peanuts as you want!</p>
+</blockquote>
+<p><a href="http://fresh2refresh.com/c-programming/c-decision-control/" target="_blank">Read more on if..else here</a></p>
+<h5 id="switch-case">Switch case</h5>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> mystery_number = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">int</span> number_chosen;
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Win a prize everytime!\n&quot;</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>;
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Pick a number between: 1 - 5\n&quot;</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, &amp;number_chosen); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Congratulations! You won a...\n&quot;</span>);
+
+<span class="hljs-keyword">switch</span>(number_chosen)
+{
+  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Trip to Barbados!&quot;</span>); <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;A bicycle!&quot;</span>); <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;A meal at Timmies!&quot;</span>); <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Season pass to Wonderland!&quot;</span>); <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Five nights at DisneyLand!&quot;</span>); <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<blockquote>
+<p>Five nights at DisneyLand!</p>
+</blockquote>
+<p><a href="http://www.tutorialspoint.com/cprogramming/switch_statement_in_c.htm" target="_blank">Read more on the switch statement here</a></p>
 
                     
                     </section>
@@ -540,10 +609,10 @@
         </div>
 
         
-        <a href="../section0/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Setup"><i class="fa fa-angle-left"></i></a>
+        <a href="../section1/1.4.html" class="navigation navigation-prev " aria-label="Previous page: Lists of Characters"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section0/0.2.html" class="navigation navigation-next " aria-label="Next page: Xcode"><i class="fa fa-angle-right"></i></a>
+        <a href="../section1/1.6.html" class="navigation navigation-next " aria-label="Next page: Loops"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

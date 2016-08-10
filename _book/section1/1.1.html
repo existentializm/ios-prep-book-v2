@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Setting up your mac | Lighthouse Logo</title>
+        <title>Writing your first C program | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section0/0.2.html" />
+    <link rel="next" href="../section1/1.2.html" />
     
     
-    <link rel="prev" href="../section0/index.html" />
+    <link rel="prev" href="../section1/index.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1.1"
-        data-chapter-title="Setting up your mac"
-        data-filepath="section0/0.1.md"
+        data-level="2.1"
+        data-chapter-title="Writing your first C program"
+        data-filepath="section1/1.1.md"
         data-basepath=".."
         data-revision="Tue Aug 09 2016 21:55:11 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -98,7 +98,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="section0/0.1.html">
+        <li class="chapter " data-level="1.1" data-path="section0/0.1.html">
             
                 
                     <a href="../section0/0.1.html">
@@ -164,7 +164,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1" data-path="section1/1.1.html">
+        <li class="chapter active" data-level="2.1" data-path="section1/1.1.html">
             
                 
                     <a href="../section1/1.1.html">
@@ -524,12 +524,72 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-your-mac"><img src="../images/mac-big.png" alt="Mac"> Setting up your mac</h1>
-<p>Watch the video below and follow along to set up your Mac for success.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/OQYR-Wz3BKU?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <h1 id="understanding-your-first-c-program">Understanding your first C program</h1>
+<p>Let&apos;s jump right in, open up Xcode and create our first Command-line program. Watch this video and follow the steps to create your first Xcode project. In this video we create a Command-line tool called &quot;Hello World&quot;. When you create a Command-line tool, Xcode generates a basic C program for you. Once you are done watching the video, read below to understand the C program Xcode generated.</p>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/OTNKlgEdE6Q" frameborder="0" allowfullscreen></iframe>
 
-<p>After watching this video you will have a directory structure that will allow you to house all the C files we will create in the next section of the prep course. We will grow this directory later on in the prep.</p>
-<p><strong>One section at a time young padawan!</strong></p>
+
+<h4 id="inspect-the-code-from-our-first-c-program">Inspect the code from our first C program</h4>
+<pre><code class="lang-c"><span class="hljs-comment">/* Prints &quot;Hello world!&quot; on the screen */</span>
+
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+    <span class="hljs-comment">// insert code here...</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, World!\n&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="the-breakdown">The breakdown</h3>
+<p>Understanding every line we write in a program is required in order to make sure our code compiles properly.  Let&apos;s breakdown every single line in the C program above.</p>
+<p><code>#include &lt;stdio.h&gt;</code></p>
+<ul>
+<li>is a statement which tells the compiler to insert the contents of <strong>stdio</strong> at that particular place. <strong>Stdio</strong> stands for Standard Input / Output.</li>
+<li>In C we use some functions like <strong>printf()</strong>, <strong>scanf()</strong>,
+Do we define it? No.</li>
+<li>These functions are not defined by the programmer. These functions are already defined inside the <strong>stdio</strong> library. To use these kinds of predefined functions, we have to <code>#include</code> the corresponding header file <code>&lt;stdio.h&gt;</code>.</li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+
+}
+</code></pre>
+<ul>
+<li>the most important part of a C program is the <strong>main()</strong> function. At this point the distinction is not critical, <strong>main()</strong> is a C <em>function</em>, not a C command</li>
+<li>A function is nothing more than a routine that performs some task</li>
+<li>Some functions come with C and some are created by you. C programs are made up of one or more functions. Each program must <em>always</em> include a <strong>main()</strong> function. A function is distinguished from a command by the parenthesis that follow the function name.</li>
+</ul>
+<p>These are functions:
+<strong>main()</strong>, <strong>printf()</strong>, <strong>strlen()</strong></p>
+<p>and these are commands:
+<strong>return</strong>, <strong>while</strong>, <strong>int</strong>, <strong>if</strong> etc...</p>
+<p>What you see beside <strong>main</strong> and enclosed in parenthesis are called arguments. Arguments are bit&apos;s of information the function needs in order to execute successfully. The arguments are not that important at this moment in time. So I will omit their explanation.</p>
+<p><code>// insert code here...</code></p>
+<ul>
+<li>is a comment in C</li>
+<li>We&apos;ll use comments in help clarify what our program does for both us and the readers of our program</li>
+<li>Don&apos;t worry to much about how to write a comment, we will cover that soon!</li>
+</ul>
+<p>Last but not least, what is inside our <strong>main()</strong> function:</p>
+<pre><code class="lang-c"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, World!\n&quot;</span>);
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+</code></pre>
+<ul>
+<li>The first line prints <code>Hello, world!</code> to the screen</li>
+<li>The second line we need not worry about now but it is the value our function returns and 0 means the program is successful.</li>
+</ul>
+<h3 id="the-main-function">The main() function</h3>
+<p>Just as a home page is the beginning place to surf a website, <strong>main()</strong> is always the first place the computer begins when running your program. Even if <strong>main()</strong> is not the first function listed in your program, <strong>main()</strong> still determines the beginning of the program&apos;s execution.</p>
+<p>After the word <strong>main()</strong>, you always see an opening brace <code>({)</code>. When you find a matching closing brace <code>(})</code>, <strong>main()</strong> is finished.</p>
+<p>That wasn&apos;t so bad, right! Pat yourself on the back for experiencing your first program in C. :)</p>
+<h3 id="a-c-program-in-action">A C program in action</h3>
+<p>Please follow along:</p>
+<h2 id=""><iframe width="700" height="394" src="https://www.youtube.com/embed/IapmByWYVIc" frameborder="0" allowfullscreen></iframe></h2>
+<h3 id="a-little-starter-challenge">A little starter challenge</h3>
+<p>Write your own C program by expanding on the initial example given above. Try to make your program print 3 interesting things about you.</p>
+<p>When you think you are done, press the Build &amp; Run button to see your program in action!</p>
+<p>When you are satisfied with the output, save the program in the C folder we created earlier in the setup.</p>
+<h5 id="hint">Hint</h5>
+<p>You will need 3 <strong>printf</strong> statements in order to complete the challenge.</p>
 
                     
                     </section>
@@ -540,10 +600,10 @@
         </div>
 
         
-        <a href="../section0/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Setup"><i class="fa fa-angle-left"></i></a>
+        <a href="../section1/index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to Programming C"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section0/0.2.html" class="navigation navigation-next " aria-label="Next page: Xcode"><i class="fa fa-angle-right"></i></a>
+        <a href="../section1/1.2.html" class="navigation navigation-next " aria-label="Next page: Clarifying your code"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

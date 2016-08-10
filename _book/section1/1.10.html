@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Setting up your mac | Lighthouse Logo</title>
+        <title>Structs | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../section0/0.2.html" />
+    <link rel="next" href="../section2/index.html" />
     
     
-    <link rel="prev" href="../section0/index.html" />
+    <link rel="prev" href="../section1/1.9.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="1.1"
-        data-chapter-title="Setting up your mac"
-        data-filepath="section0/0.1.md"
+        data-level="2.10"
+        data-chapter-title="Structs"
+        data-filepath="section1/1.10.md"
         data-basepath=".."
         data-revision="Tue Aug 09 2016 21:55:11 GMT-0400 (EDT)"
         data-innerlanguage="">
@@ -98,7 +98,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="section0/0.1.html">
+        <li class="chapter " data-level="1.1" data-path="section0/0.1.html">
             
                 
                     <a href="../section0/0.1.html">
@@ -299,7 +299,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.10" data-path="section1/1.10.html">
+        <li class="chapter active" data-level="2.10" data-path="section1/1.10.html">
             
                 
                     <a href="../section1/1.10.html">
@@ -524,12 +524,36 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="setting-up-your-mac"><img src="../images/mac-big.png" alt="Mac"> Setting up your mac</h1>
-<p>Watch the video below and follow along to set up your Mac for success.</p>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/OQYR-Wz3BKU?showinfo=0" frameborder="0" allowfullscreen></iframe>
-
-<p>After watching this video you will have a directory structure that will allow you to house all the C files we will create in the next section of the prep course. We will grow this directory later on in the prep.</p>
-<p><strong>One section at a time young padawan!</strong></p>
+                        <h4 id="a-little-about-structs">A little about Structs</h4>
+<p>A struct is an aggregate or composite data type, used for representing entities that are described by multiple attributes of potentially different types. Some examples:</p>
+<ul>
+<li>A point in 3-D space, represented by 3 real-valued coordinates x, y, and z;</li>
+<li>A mailing address, represented by a street name, house or apartment number, city, state, ZIP code;</li>
+<li>A line item in an invoice, represented by a part name or number, unit cost, quantity, and subtotal;</li>
+<li>A node in a tree, represented by a key, data value, left child, and right child;</li>
+<li>etc., etc., etc. (if your into computer science ;)</li>
+</ul>
+<p>Let&apos;s look at the person as a concrete example. We could define our person type as follows:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> Person {
+  <span class="hljs-keyword">char</span> *fullName;
+  <span class="hljs-keyword">int</span> age;
+  <span class="hljs-keyword">int</span> weight;    
+  <span class="hljs-keyword">int</span> height; <span class="hljs-comment">/* CM */</span>
+  <span class="hljs-keyword">char</span> *nationality;
+};
+</code></pre>
+<p>We&apos;d create an instance of that struct like so:</p>
+<p>`struct Person newPerson;``
+and a pointer to that instance as:</p>
+<p>`struct Person *personPointer = &amp;newPerson;``
+and access each of its fields using either the . or -&gt; operator depending on whether we&apos;re dealing with a struct instance or a pointer to a struct:</p>
+<pre><code class="lang-c">newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>
+personPointer-&gt;height = <span class="hljs-number">175</span>;
+</code></pre>
+<p>This would be a great opportunity for you to learn about C pointers.</p>
+<h4 id="c-pointers-explained">C Pointers explained</h4>
+<p><strong>Note</strong> Don&apos;t be alarmed because this guy is using an old school editor that doesn&apos;t look like your beautiful Mac! Just enjoy the video for it&apos;s conceptual understanding and the wonderful explanation it provides.</p>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/TFTpRjPcoUs" frameborder="0" allowfullscreen></iframe>
 
                     
                     </section>
@@ -540,10 +564,10 @@
         </div>
 
         
-        <a href="../section0/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Setup"><i class="fa fa-angle-left"></i></a>
+        <a href="../section1/1.9.html" class="navigation navigation-prev " aria-label="Previous page: Assignment #2"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section0/0.2.html" class="navigation navigation-next " aria-label="Next page: Xcode"><i class="fa fa-angle-right"></i></a>
+        <a href="../section2/index.html" class="navigation navigation-next " aria-label="Next page: Introduction to Objective-C"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
