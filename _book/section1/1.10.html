@@ -53,7 +53,7 @@
         data-chapter-title="Structs"
         data-filepath="section1/1.10.md"
         data-basepath=".."
-        data-revision="Wed Aug 10 2016 00:20:57 GMT-0400 (EDT)"
+        data-revision="Sun Aug 21 2016 20:16:09 GMT-0400 (EDT)"
         data-innerlanguage="">
     
 
@@ -328,7 +328,7 @@
                         
                             <b>3.</b>
                         
-                        Introduction to Objective-C
+                        Introduction to OOP &amp; Objective-C
                     </a>
             
             
@@ -344,7 +344,7 @@
                         
                             <b>3.1.</b>
                         
-                        Objective-C Primer
+                        Classes
                     </a>
             
             
@@ -359,7 +359,7 @@
                         
                             <b>3.2.</b>
                         
-                        Foundation
+                        Inheritance
                     </a>
             
             
@@ -367,14 +367,22 @@
     
         <li class="chapter " data-level="3.3" data-path="section2/2.3.html">
             
-            <span><b>3.3.</b> Loops</span>
+                
+                    <a href="../section2/2.3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Foundation
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="3.4" data-path="section2/2.4.html">
             
-            <span><b>3.4.</b> Objects</span>
+            <span><b>3.4.</b> Challenges</span>
             
             
         </li>
@@ -541,32 +549,109 @@
                     <section class="normal" id="section-">
                     
                         <h4 id="a-little-about-structs">A little about Structs</h4>
-<p>A struct is an aggregate or composite data type, used for representing entities that are described by multiple attributes of potentially different types. Some examples:</p>
+<p>A struct is a composite data type, used for representing things that are described by multiple attributes of potentially different types. Some examples:</p>
 <ul>
 <li>A point in 3-D space, represented by 3 real-valued coordinates x, y, and z;</li>
 <li>A mailing address, represented by a street name, house or apartment number, city, state, ZIP code;</li>
 <li>A line item in an invoice, represented by a part name or number, unit cost, quantity, and subtotal;</li>
-<li>A node in a tree, represented by a key, data value, left child, and right child;</li>
-<li>etc., etc., etc. (if your into computer science ;)</li>
+<li>A node in a tree, represented by a key, data value, left child, and right child etc., etc., etc. (if your into computer science ;)</li>
 </ul>
-<p>Let&apos;s look at the person as a concrete example. We could define our person type as follows:</p>
+<p>Let&apos;s look at the person as a concrete example. We define our <strong>Person</strong> as follows:</p>
 <pre><code class="lang-c"><span class="hljs-keyword">struct</span> Person {
   <span class="hljs-keyword">char</span> *fullName;
   <span class="hljs-keyword">int</span> age;
   <span class="hljs-keyword">int</span> weight;    
-  <span class="hljs-keyword">int</span> height; <span class="hljs-comment">/* CM */</span>
+  <span class="hljs-keyword">int</span> height;
   <span class="hljs-keyword">char</span> *nationality;
 };
 </code></pre>
 <p>We&apos;d create an instance of that struct like so:</p>
-<p>`struct Person newPerson;``
-and a pointer to that instance as:</p>
-<p>`struct Person *personPointer = &amp;newPerson;``
-and access each of its fields using either the . or -&gt; operator depending on whether we&apos;re dealing with a struct instance or a pointer to a struct:</p>
-<pre><code class="lang-c">newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>
-personPointer-&gt;height = <span class="hljs-number">175</span>;
+<p><code>struct Person newPerson;</code></p>
+<p>And modify some of the structs attributes like so:</p>
+<pre><code class="lang-c">newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>;
 </code></pre>
-<p>This would be a great opportunity for you to learn about C pointers.</p>
+<p>see how we can access each of its fields using . operator!</p>
+<p>Here is a full look at this struct being used in a C program:</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-keyword">struct</span> Person {
+    <span class="hljs-keyword">char</span> *fullName;
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> weight;
+    <span class="hljs-keyword">int</span> height;
+    <span class="hljs-keyword">char</span> *nationality;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+    <span class="hljs-keyword">struct</span> Person newPerson;
+    newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, newPerson.nationality);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">// Output</span>
+Canadian
+</code></pre>
+<h3 id="values--references">Values &amp; References</h3>
+<p>In C there are value types and reference types. The way we have been creating / using structs is by value. A value is an <strong>instance</strong> of a struct whereas a reference is a <strong>pointer</strong> to a struct. When you are dealing with struct by value, you are actually dealing with a copy of that struct. Take a look:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> Person {
+    <span class="hljs-keyword">char</span> *fullName;
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> weight;
+    <span class="hljs-keyword">int</span> height;
+    <span class="hljs-keyword">char</span> *nationality;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+    <span class="hljs-keyword">struct</span> Person newPerson;
+    newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>;
+
+    <span class="hljs-keyword">struct</span> Person secondPerson;
+    secondPerson = newPerson; <span class="hljs-comment">// Assigning first person to second person</span>
+    secondPerson.nationality = <span class="hljs-string">&quot;Spanish&quot;</span>;
+
+    <span class="hljs-comment">// first persons nationality remains the same</span>
+    <span class="hljs-comment">// our second person (copy) was modified.</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, newPerson.nationality);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, secondPerson.nationality);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+<span class="hljs-comment">// Output</span>
+First person: Canadian
+Second person: Spanish
+</code></pre>
+<p>Where as a reference would modify the original struct like so:</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-keyword">struct</span> Person {
+   <span class="hljs-keyword">char</span> *fullName;
+   <span class="hljs-keyword">int</span> age;
+   <span class="hljs-keyword">int</span> weight;
+   <span class="hljs-keyword">int</span> height;
+   <span class="hljs-keyword">char</span> *nationality;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+   <span class="hljs-keyword">struct</span> Person newPerson;
+   newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>;
+
+   <span class="hljs-keyword">struct</span> Person *secondPerson = &amp;newPerson;
+   secondPerson-&gt;nationality = <span class="hljs-string">&quot;Spanish&quot;</span>;
+   <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;First person: %s\n&quot;</span>, newPerson.nationality);
+   <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Second person: %s\n&quot;</span>, secondPerson.nationality);
+   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+<span class="hljs-comment">// Output</span>
+First person: Spanish
+Second person: Spanish
+</code></pre>
+<p>Do you see the difference? Please take a moment to really let this sink in...</p>
+<p>We would define a reference by creating a <strong>pointer</strong> to the person struct like so:</p>
+<p><code>struct Person *personPointer = &amp;newPerson;</code></p>
+<p>and access each of its fields using -&gt; operator.</p>
+<pre><code class="lang-c">newPerson.nationality -&gt; <span class="hljs-string">&quot;Canadian&quot;</span>;
+</code></pre>
+<p>This would be a great opportunity for you to learn more about C pointers.</p>
 <h4 id="c-pointers-explained">C Pointers explained</h4>
 <p><strong>Note</strong> Don&apos;t be alarmed because this guy is using an old school editor that doesn&apos;t look like your beautiful Mac! Just enjoy the video for it&apos;s conceptual understanding and the wonderful explanation it provides.</p>
 <iframe width="700" height="394" src="https://www.youtube.com/embed/TFTpRjPcoUs" frameborder="0" allowfullscreen></iframe>
@@ -583,7 +668,7 @@ personPointer-&gt;height = <span class="hljs-number">175</span>;
         <a href="../section1/1.9.html" class="navigation navigation-prev " aria-label="Previous page: Assignment #2"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section2/index.html" class="navigation navigation-next " aria-label="Next page: Introduction to Objective-C"><i class="fa fa-angle-right"></i></a>
+        <a href="../section2/index.html" class="navigation navigation-next " aria-label="Next page: Introduction to OOP &amp; Objective-C"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

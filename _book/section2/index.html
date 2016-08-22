@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction to Objective-C | Lighthouse Logo</title>
+        <title>Introduction to OOP &amp; Objective-C | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="3"
-        data-chapter-title="Introduction to Objective-C"
+        data-chapter-title="Introduction to OOP &amp; Objective-C"
         data-filepath="section2/README.md"
         data-basepath=".."
-        data-revision="Wed Aug 10 2016 00:20:57 GMT-0400 (EDT)"
+        data-revision="Sun Aug 21 2016 20:16:09 GMT-0400 (EDT)"
         data-innerlanguage="">
     
 
@@ -328,7 +328,7 @@
                         
                             <b>3.</b>
                         
-                        Introduction to Objective-C
+                        Introduction to OOP &amp; Objective-C
                     </a>
             
             
@@ -344,7 +344,7 @@
                         
                             <b>3.1.</b>
                         
-                        Objective-C Primer
+                        Classes
                     </a>
             
             
@@ -359,7 +359,7 @@
                         
                             <b>3.2.</b>
                         
-                        Foundation
+                        Inheritance
                     </a>
             
             
@@ -367,14 +367,22 @@
     
         <li class="chapter " data-level="3.3" data-path="section2/2.3.html">
             
-            <span><b>3.3.</b> Loops</span>
+                
+                    <a href="../section2/2.3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Foundation
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="3.4" data-path="section2/2.4.html">
             
-            <span><b>3.4.</b> Objects</span>
+            <span><b>3.4.</b> Challenges</span>
             
             
         </li>
@@ -540,18 +548,83 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="objective-c-prequisite">Objective C (Prequisite)</h1>
-<iframe width="700" height="394" src="https://www.youtube.com/embed/8rwsuXHA7RA" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="700" height="394" src="https://www.youtube.com/embed/8rwsuXHA7RA" frameborder="0" allowfullscreen></iframe>
 
-<p>Just a little inspiration ;) </p>
 <h3 id="introduction">Introduction</h3>
-<p>So, now that we learned some programming, it would be good to know what exactly is object-oriented programming? In a 1994 interview with the Rolling Stone magazine, Steve Jobs described it in the following way:</p>
+<p>We learned some basic C programming:</p>
+<ul>
+<li>How to create <strong>variables</strong></li>
+<li>How to write <strong>functions</strong></li>
+<li>How to add control flow to your program with <strong>if / else</strong></li>
+</ul>
+<p>and more...</p>
+<p>In order to build iOS apps, we need to to learn a little about object-oriented programming. Objective-C is an object-oriented extension of the C language.</p>
+<h3 id="objectoriented-programming-oop">Object-oriented programming (OOP)</h3>
+<p>OOP is a way of designing software in which programmers define not only the data type of a data structure, but also the types of operations (functions) that can be applied to the data structure.</p>
+<p>In this way, the data structure becomes an object that includes both data and functions. Consider this example:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">struct</span> Person {
+  <span class="hljs-keyword">char</span> *fullName;
+  <span class="hljs-keyword">int</span> age;
+  <span class="hljs-keyword">int</span> weight;    
+  <span class="hljs-keyword">int</span> height; <span class="hljs-comment">/* CM */</span>
+  <span class="hljs-keyword">char</span> *nationality;
+};
+</code></pre>
+<p>Remember that a C struct is a way for us to group attributes together, however, if we wanted to perform some operations that modify the the structs attributes we would need to pass it into a function like so:</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Passing by value</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeNationality</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> Person person)</span> </span>{
+    person.nationality = <span class="hljs-string">&quot;Chinese&quot;</span>;
+}
+
+
+<span class="hljs-comment">// Passing by reference</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeNationality</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> Person *person)</span> </span>{
+    person-&gt;nationality = <span class="hljs-string">&quot;Chinese&quot;</span>;
+}
+</code></pre>
+<p>The struct <strong>Person</strong> is separated from the functions and they are not a single thing. Look at this program in it&apos;s entirety:</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">// Person is isolated</span>
+<span class="hljs-keyword">struct</span> Person {
+    <span class="hljs-keyword">char</span> *fullName;
+    <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">int</span> weight;
+    <span class="hljs-keyword">int</span> height;
+    <span class="hljs-keyword">char</span> *nationality;
+};
+
+<span class="hljs-comment">// Function is isolated</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeNationality</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> Person person)</span> </span>{
+    person.nationality = <span class="hljs-string">&quot;Chinese&quot;</span>;
+}
+
+<span class="hljs-comment">// Program is isolated</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+    <span class="hljs-keyword">struct</span> Person newPerson;
+    newPerson.nationality = <span class="hljs-string">&quot;Canadian&quot;</span>;
+
+    changeNationality(newPerson);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Nationality: %s\n&quot;</span>, newPerson.nationality);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>As you can see there are area&apos;s I marked <code>// isolated</code>. I am just trying to point out the separation and show that these things are not connected.</p>
+<h3 id="objectoriented-programming-oop">Object-oriented programming (OOP)</h3>
+<p>OOP Refers to a type of computer programming (software design) in which programmers define not only the data type of a data structure, but also the types of operations (functions) that can be applied to the data structure.</p>
+<p>In this way, the data structure becomes an object that includes both data and functions.</p>
+<p>Enjoy a talk about Object-oriented programming before we try to learn Objective-C (the Object-oriented extension of C).</p>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/NUl8lcbeN2Y" frameborder="0" allowfullscreen></iframe>
+
+<hr>
+<h5 id="in-a-1994-interview-with-the-rolling-stone-magazine-steve-jobs-described-objects-in-the-following-way">In a 1994 interview with the Rolling Stone magazine, Steve Jobs described objects in the following way:</h5>
 <p>&quot;Objects are like people. They&apos;re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we&apos;re doing right here.</p>
 <p><strong>Here&apos;s an example:</strong>
 If I&apos;m your laundry object, you can give me your dirty clothes and send me a message that says, &quot;Can you get my clothes laundered, please.&quot; I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, &quot;Here are your clean clothes.&quot;</p>
 <p>You have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can&apos;t even hail a taxi. You can&apos;t pay for one, you don&apos;t have dollars in your pocket. Yet I knew how to do all of that. And you didn&apos;t have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction. That&apos;s what objects are. They encapsulate complexity, and the interfaces to that complexity are high level.&quot;</p>
 <p>For the complete interview, <a href="http://www.rollingstone.com/culture/news/steve-jobs-in-1994-the-rolling-stone-interview-20110117" target="_blank">click here</a></p>
-<p>We will be learning Objective-C and Swift in class, two object-oriented languages, that allows us the flexibility to built complex apps in much less time than using a procedural language such as C.</p>
+<p>In the beginning we will be learning Objective-C in class, and object-oriented extension of C that allows us the flexibility to built complex apps in much less time than using a procedural language such as C.</p>
 <hr>
 
                     
@@ -566,7 +639,7 @@ If I&apos;m your laundry object, you can give me your dirty clothes and send me 
         <a href="../section1/1.10.html" class="navigation navigation-prev " aria-label="Previous page: Structs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section2/2.1.html" class="navigation navigation-next " aria-label="Next page: Objective-C Primer"><i class="fa fa-angle-right"></i></a>
+        <a href="../section2/2.1.html" class="navigation navigation-next " aria-label="Next page: Classes"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

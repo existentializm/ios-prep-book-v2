@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Objective-C Primer | Lighthouse Logo</title>
+        <title>Classes | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="3.1"
-        data-chapter-title="Objective-C Primer"
+        data-chapter-title="Classes"
         data-filepath="section2/2.1.md"
         data-basepath=".."
-        data-revision="Wed Aug 10 2016 00:20:57 GMT-0400 (EDT)"
+        data-revision="Sun Aug 21 2016 20:16:09 GMT-0400 (EDT)"
         data-innerlanguage="">
     
 
@@ -328,7 +328,7 @@
                         
                             <b>3.</b>
                         
-                        Introduction to Objective-C
+                        Introduction to OOP &amp; Objective-C
                     </a>
             
             
@@ -344,7 +344,7 @@
                         
                             <b>3.1.</b>
                         
-                        Objective-C Primer
+                        Classes
                     </a>
             
             
@@ -359,7 +359,7 @@
                         
                             <b>3.2.</b>
                         
-                        Foundation
+                        Inheritance
                     </a>
             
             
@@ -367,14 +367,22 @@
     
         <li class="chapter " data-level="3.3" data-path="section2/2.3.html">
             
-            <span><b>3.3.</b> Loops</span>
+                
+                    <a href="../section2/2.3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Foundation
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="3.4" data-path="section2/2.4.html">
             
-            <span><b>3.4.</b> Objects</span>
+            <span><b>3.4.</b> Challenges</span>
             
             
         </li>
@@ -540,12 +548,9 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="objectivec-primer">Objective-C Primer</h3>
-<p>Objective-C is the language you will use to create iOS apps. The language has a really interesting history you can read more about it <a href="https://en.wikipedia.org/wiki/Objective-C" target="_blank">here</a>.</p>
-<p>Writing an Objective-C program is very similar to a C program. Take this Hello World program as an example:  </p>
-<p><img src="../images/objc-helloworld.png" alt="Hello World"></p>
-<h3 id="the-breakdown">The breakdown</h3>
-<p>Similar to our first C program an Objective-C program starts by importing a library in order for us to access things like <code>NSLog</code>. In our C program we used <code>printf</code> but we did not write the code that makes <code>printf</code> output what we want to the console. The standard C library <code>stdio</code> allows us to do that. Same goes for Objective-C except <strong>Foundation</strong> (one of Apple&apos;s frameworks) does most of the heavy lifting for us.</p>
+                        <h3 id="first-objectivec-program">First Objective-C program</h3>
+<p>Similar to our first C program an Objective-C program starts by importing a framework called <strong>Foundation</strong> in order for us to access things like <code>NSLog</code>.</p>
+<p>In our C program we used <code>printf()</code> to print out strings to the console. We did not write the function <code>printf()</code> ourselves - <code>printf()</code> was defined in the standard C library <code>stdio</code>. We have to <code>#include &lt;stdio.h&gt;</code> in order to use <code>printf()</code> in our programs. Same goes for Objective-C except <strong>Foundation</strong> (one of Apple&apos;s frameworks) does most of the heavy lifting for us.</p>
 <p><code>#import &lt;Foundation/Foundation.h&gt;</code></p>
 <p>The main function is the exact same in Objective-C. The only difference is the use of something called an @autoreleasepool. Don&apos;t worry to much about that for now, it has to do with managing memory and you will learn all about it in class. Stay with me...</p>
 <pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
@@ -562,7 +567,71 @@
 <pre><code class="lang-c">NSLog(@<span class="hljs-string">&quot;Hello, World!\n&quot;</span>);
 </code></pre>
 <p>One of of the first things I asked myself when I encountered <code>NSLog</code> was the use of the @ sign. Why? It&apos;s how Objective-C strings are differentiated from C Strings. Let&apos;s keep it at that.</p>
-<p>Notice the similarities? </p>
+<p>Now that we understand the difference between a basic c program and an Objective-C program. We can learn a little bit about classes.</p>
+<hr>
+<h3 id="classes">Classes</h3>
+<p>Building apps for <strong>iOS</strong> is very different than making programs in C. The bulk of the work is actually not done by us. It&apos;s done by engineers at Apple and other companies alike. They develop the <a href="https://en.wikipedia.org/wiki/Software_framework" target="_blank">frameworks</a> that we use in order to build apps for the iOS platform.</p>
+<blockquote>
+<p><em>&quot;The Foundation framework defines a base layer of Objective-C classes. In addition to providing a set of useful &gt;primitive object classes, it introduces several paradigms that define functionality not covered by the Objective-C language.&quot;</em></p>
+</blockquote>
+<p>The Foundation framework includes all the basic classes we need to accomplish our tasks. Some classes represent basic data types like strings and arrays while others represent information like dates. It even gets as sophisticated as objects that allow us to communicate over a network (the internet).</p>
+<h3 id="so-what-is-a-class-anyway">So what is a Class anyway?</h3>
+<p>A class is a blueprint of an object. You can think of a class as a concept, and the object is the embodiment of that concept. You need to have a class before you can create an object. So, let&apos;s say you want to use a person in your program. You want to be able to describe the person and have the person do something. A class called &apos;person&apos; would provide a blueprint for what a person looks like and what a person can do. To actually use a person in your program you need to create an object. You use the person class to create an object of the type &apos;person.&apos; Now you can describe this person and have it do something.</p>
+<p>Classes are very useful in programming. Consider the example of where you don&apos;t want to use just one person but 100 people. Rather than describing each one in detail from scratch, you can use the same person class to create 100 objects of the type &apos;person.&apos; You still have to give each one a name and other properties, but the basic structure of what a person looks like is the same.</p>
+<p>Here is how you define a <strong>class</strong> in Objetive-C:</p>
+<pre><code class="lang-c">@interface Person : NSObject {
+  NSString *nationality;
+}
+- (<span class="hljs-keyword">void</span>)changeNationality:(NSString *nationality);
+@end
+
+@implementation Person
+- (<span class="hljs-keyword">void</span>)changeNationality:(NSString *nationality) {
+    <span class="hljs-comment">// write some code to change nationality</span>
+}
+@end
+</code></pre>
+<p>Here is how you would use the <strong>class</strong> in Objective-C (entire program main.m):</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
+<span class="hljs-comment">// Class creation</span>
+@interface Person : NSObject
+@property NSString *nationality;
+- (<span class="hljs-keyword">void</span>)changeNationality:(NSString *)nationality;
+@end
+
+@implementation Person
+- (<span class="hljs-keyword">void</span>)changeNationality:(NSString *)nationality {
+    self.nationality = nationality;
+}
+@end
+
+<span class="hljs-comment">// Program</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+    @autoreleasepool {
+        <span class="hljs-comment">// Object creation</span>
+        Person *p = [[Person alloc] init];
+        [p changeNationality:@<span class="hljs-string">&quot;Spanish&quot;</span>];
+
+        <span class="hljs-comment">// Print data in object</span>
+        NSLog(@<span class="hljs-string">&quot;%@&quot;</span>, p.nationality);
+    }
+}
+</code></pre>
+<hr>
+<p>Now I know this is a lot to take in and you are confused but keep going and make sure you go through all the videos and links below. For now just remember that the most important class in <strong>Foundation</strong> is called <code>NSObject</code>.</p>
+<p><strong>NSObject</strong> is the root class of all classes and it&apos;s 3 most basic functions are to allocate and initialize memory for you (alloc &amp; init), as well as provide a description function.</p>
+<p>Objective-C is all about objects sending messages to other objects -- so <strong>NSObject</strong> exists to provide that basic functionality.</p>
+<p>If this sounds strange to you, you may wish to read more about programming paradigms, particularly object-oriented programming....In a nutshell, however, Objective C is a simple extension to the C language. C gets you the ability to program computer memory, numbers, and characters, but do anything else (like use strings, or show views, for example) you need the extension part, and NSObject is the beginning of that extension.</p>
+<p>Here is one of my favourite reads about <a href="http://rypress.com/tutorials/objective-c/classes" target="_blank">Classes &amp; Objects with Objective-C</a>!</p>
+<hr>
+<h3 id="more-classes">More Classes</h3>
+<p>Grab a coffee, sit back, relax and listen to one of your future mentors Steve dive deeper into classes, class initialization &amp; object creation.</p>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/DaA5hsdKNnM" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="extra-links">Extra links</h3>
+<p><a href="https://www.youtube.com/watch?v=VNF3nPnNwfk" target="_blank">Harvard iOS PROGRAMMING COURSE Lecture 1 (Objective-C Primer)</a></p>
+<p><a href="http://blog.teamtreehouse.com/the-beginners-guide-to-objective-c-language-and-variables" target="_blank">Objective-C Variables &amp; language</a></p>
+<p><a href="http://rypress.com/tutorials/objective-c/methods" target="_blank">Defining methods in Objective-C</a></p>
 
                     
                     </section>
@@ -573,10 +642,10 @@
         </div>
 
         
-        <a href="../section2/index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to Objective-C"><i class="fa fa-angle-left"></i></a>
+        <a href="../section2/index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to OOP &amp; Objective-C"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section2/2.2.html" class="navigation navigation-next " aria-label="Next page: Foundation"><i class="fa fa-angle-right"></i></a>
+        <a href="../section2/2.2.html" class="navigation navigation-next " aria-label="Next page: Inheritance"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

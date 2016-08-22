@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Foundation | Lighthouse Logo</title>
+        <title>Inheritance | Lighthouse Logo</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.6">
@@ -37,6 +37,8 @@
         
     
     
+    <link rel="next" href="../section2/2.3.html" />
+    
     
     <link rel="prev" href="../section2/2.1.html" />
     
@@ -48,10 +50,10 @@
         
     <div class="book"
         data-level="3.2"
-        data-chapter-title="Foundation"
+        data-chapter-title="Inheritance"
         data-filepath="section2/2.2.md"
         data-basepath=".."
-        data-revision="Wed Aug 10 2016 00:20:57 GMT-0400 (EDT)"
+        data-revision="Sun Aug 21 2016 20:16:09 GMT-0400 (EDT)"
         data-innerlanguage="">
     
 
@@ -326,7 +328,7 @@
                         
                             <b>3.</b>
                         
-                        Introduction to Objective-C
+                        Introduction to OOP &amp; Objective-C
                     </a>
             
             
@@ -342,7 +344,7 @@
                         
                             <b>3.1.</b>
                         
-                        Objective-C Primer
+                        Classes
                     </a>
             
             
@@ -357,7 +359,7 @@
                         
                             <b>3.2.</b>
                         
-                        Foundation
+                        Inheritance
                     </a>
             
             
@@ -365,14 +367,22 @@
     
         <li class="chapter " data-level="3.3" data-path="section2/2.3.html">
             
-            <span><b>3.3.</b> Loops</span>
+                
+                    <a href="../section2/2.3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Foundation
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="3.4" data-path="section2/2.4.html">
             
-            <span><b>3.4.</b> Objects</span>
+            <span><b>3.4.</b> Challenges</span>
             
             
         </li>
@@ -538,17 +548,86 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="foundation">Foundation</h3>
-<p>Building apps for iOS is different than making programs in C. The bulk of the work is actually not done by us. It&apos;s done by engineers at Apple and other companies alike. They develop the <a href="https://en.wikipedia.org/wiki/Software_framework" target="_blank">frameworks</a> that we use in order to build apps for the iOS platform.</p>
-<blockquote>
-<p><em>&quot;The Foundation framework defines a base layer of Objective-C classes. In addition to providing a set of useful &gt;primitive object classes, it introduces several paradigms that define functionality not covered by the Objective-C language.&quot;</em></p>
-<ul>
-<li><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/ObjC_classic/" target="_blank">The Foundation Framework</a>.</li>
-</ul>
-</blockquote>
-<p>The Foundation framework includes all the basic objects we need to accomplish our tasks. Some classes represent basic data types like strings and arrays while others represent information like dates. It even gets as sophisticated as objects that allow us to communicate over a network (the internet).</p>
-<p>The most important class in Foundation is called <code>NSObject</code> and it&apos;s where all the other classes come from. Think <code>NSObject</code> like the root of your Family Tree. It&apos;s where everything started.</p>
-<p>Let&apos;s take a detour and go over this reading about <a href="http://rypress.com/tutorials/objective-c/classes" target="_blank">Classes</a>!</p>
+                        <h3 id="inheritance">Inheritance</h3>
+<p>One of the most important concepts in object-oriented programming is that of inheritance. Inheritance allows us to define a class in terms of another class which makes it easier to create and maintain an application. This also provides an opportunity to reuse the code functionality and fast implementation time.</p>
+<p>When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the base class, and the new class is referred to as the derived class.</p>
+<p>The idea of inheritance implements the is a relationship. For example, mammal IS-A animal, dog IS-A mammal, hence dog IS-A animal as well and so on.</p>
+<h4 id="base--derived-classes">Base &amp; Derived Classes:</h4>
+<p>Objective-C allows only multilevel inheritance, i.e., it can have only one base class but allows multilevel inheritance. All classes in Objective-C is derived from the superclass NSObject.</p>
+<p><code>@interface derived-class: base-class</code></p>
+<p>Consider a base class Person and its derived class Employee as follows:</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
+
+@interface Person : NSObject {
+    NSString *personName;
+    NSInteger personAge;
+}
+- (id)initWithName:(NSString *)name andAge:(NSInteger)age;
+- (<span class="hljs-keyword">void</span>)print;
+@end
+
+@implementation Person
+
+- (id)initWithName:(NSString *)name andAge:(NSInteger)age{
+    personName = name;
+    personAge = age;
+    <span class="hljs-keyword">return</span> self;
+}
+
+- (<span class="hljs-keyword">void</span>)print{
+    NSLog(@<span class="hljs-string">&quot;Name: %@&quot;</span>, personName);
+    NSLog(@<span class="hljs-string">&quot;Age: %ld&quot;</span>, personAge);
+}
+@end
+
+@interface Employee : Person {
+    NSString *employeeEducation;
+}
+- (id)initWithName:(NSString *)name andAge:(NSInteger)age
+  andEducation:(NSString *)education;
+- (<span class="hljs-keyword">void</span>)print;
+@end
+
+@implementation Employee
+
+- (id)initWithName:(NSString *)name andAge:(NSInteger)age
+  andEducation: (NSString *)education {
+    personName = name;
+    personAge = age;
+    employeeEducation = education;
+    <span class="hljs-keyword">return</span> self;
+}
+
+- (<span class="hljs-keyword">void</span>)print {
+    NSLog(@<span class="hljs-string">&quot;Name: %@&quot;</span>, personName);
+    NSLog(@<span class="hljs-string">&quot;Age: %ld&quot;</span>, personAge);
+    NSLog(@<span class="hljs-string">&quot;Education: %@&quot;</span>, employeeEducation);
+}
+@<span class="hljs-function">end
+
+<span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span></span>{
+    @autoreleasepool {
+      NSLog(@<span class="hljs-string">&quot;Base class Person Object&quot;</span>);
+      Person *person = [[Person alloc]initWithName:@<span class="hljs-string">&quot;Raj&quot;</span> andAge:<span class="hljs-number">5</span>];
+      [person print];
+      NSLog(@<span class="hljs-string">&quot;Inherited Class Employee Object&quot;</span>);
+      Employee *employee = [[Employee alloc]initWithName:@<span class="hljs-string">&quot;Raj&quot;</span>
+      andAge:<span class="hljs-number">5</span> andEducation:@<span class="hljs-string">&quot;MBA&quot;</span>];
+      [employee print];
+    }        
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>When the above code is compiled and executed, it produces the following result:</p>
+<pre><code>2016-08-20 21:20:09.842 Inheritance[349:303] Base class Person Object
+2016-08-20 21:20:09.844 Inheritance[349:303] Name: Raj
+2016-08-20 21:20:09.844 Inheritance[349:303] Age: 5
+2016-08-20 21:20:09.845 Inheritance[349:303] Inherited Class Employee Object
+2016-08-20 21:20:09.845 Inheritance[349:303] Name: Raj
+2016-08-20 21:20:09.846 Inheritance[349:303] Age: 5
+2016-08-20 21:20:09.846 Inheritance[349:303] Education: MBA
+</code></pre><p>Hopefully this video will help being <strong>Inheritance</strong> home for you:</p>
+<iframe width="700" height="394" src="https://www.youtube.com/embed/p7LBx8IdyoQ" frameborder="0" allowfullscreen></iframe>
 
                     
                     </section>
@@ -559,8 +638,10 @@
         </div>
 
         
-        <a href="../section2/2.1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Objective-C Primer"><i class="fa fa-angle-left"></i></a>
+        <a href="../section2/2.1.html" class="navigation navigation-prev " aria-label="Previous page: Classes"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../section2/2.3.html" class="navigation navigation-next " aria-label="Next page: Foundation"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
